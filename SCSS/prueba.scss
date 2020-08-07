@@ -1,0 +1,158 @@
+$fuenteprincipal: 'Oswald', sans-serif;
+$fondo: url("fondo.jpg"); 
+$negro: black; 
+
+
+%clases{
+    background-image: $fondo;
+    background-size: cover;
+}
+
+@mixin compartidos($fuente, $tamano, $color, $texto){
+
+    font-family: $fuente;
+    font-size: $tamano;
+    color: $color;
+    text-align: $texto;
+}
+
+.estetica{
+    @extend %clases;
+    @include compartidos($fuenteprincipal, 5rem, $negro, center);  
+    text-transform: uppercase;
+
+}
+
+section{
+    @extend %clases;
+    @include compartidos('Bebas Neue', 7rem, $negro, center);
+}
+
+a{
+    color: $negro;
+    font-family: $fuenteprincipal;
+    text-decoration: none;
+    font-size: 1rem;
+    
+      &:hover{
+          text-decoration: none;
+          color: $negro;
+      }
+}
+
+p{
+	text-align: center;
+	color: $negro;
+	line-height: 60px;
+	font-size: 20px;
+	letter-spacing: 2px;
+	margin-right: 100px;
+
+}
+
+.main{
+	background-size: cover;
+	flex-flow: row wrap;
+	display: flex;
+	justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 40px;
+ }
+
+ .body{
+	@extend %clases;
+	border-top: white 8px groove;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.seccion{
+    @include compartidos($fuenteprincipal, 2rem, $negro, center);
+    text-transform: uppercase;
+}
+
+.ol{
+	display: grid;
+	grid-template-columns:repeat(2,300px);
+	grid-template-rows:repeat(2, 2fr);
+	grid-column-gap: 50px;
+	grid-row-gap: 50px;
+	justify-content: center;
+	margin-top: 60px;
+}
+
+.box{
+    @include compartidos('EB Garamond'serif,2rem ,$negro ,center);
+    list-style: none;
+}
+
+.producto{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+button{
+	background-color: #FFF1E6;
+	border:2px double;
+	border-radius: 20px;
+	font-size: 1rem;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.galeria{
+	margin-top: 80px;
+	margin-bottom: 20px;
+	position: relative;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+h5{
+    @include compartidos($fuenteprincipal,1.5rem ,$negro,none);
+}
+
+.titulos{
+    @include compartidos('EB Garamond'serif,1rem ,$negro,none);
+    font-weight: bold;
+}
+
+.contacto{
+    @extend %clases;
+    margin-top: 60px;
+    border-bottom: white 8px groove;
+}
+
+footer{
+    div{
+    text-align: center;   
+    clear: both;
+	width: 100%;
+	border: none 2px;
+	margin-top: 10px;
+    }
+    address{
+        @include compartidos($fuenteprincipal,12px ,$negro ,center);
+    }
+}
+
+@media (max-width: 479px) {
+	#fotos{
+		height: 100px;
+		width: 100px;
+	}
+
+}
+
+@media (max-width: 767px) {
+	#fotos{
+		height: 200px;
+		width: 200px;
+	}
+}
+
+
+
+
+
+    
